@@ -35,7 +35,21 @@ export default{
 
 <style lang="scss">
 
+.container{
 
+    padding: 24px;
+
+    h2{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
 
 
 </style>

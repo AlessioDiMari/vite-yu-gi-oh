@@ -27,5 +27,19 @@ export default{
 
 <style lang="scss">
 
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: calc(100% / 5 - 20px / 5 * 4);
+    text-align: center;
+    background-color: rgb(0, 118, 236);
+    border-radius: 5px;
+
+    span{
+        color: black;
+    }
+
+}
 
 </style>
