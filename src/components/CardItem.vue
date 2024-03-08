@@ -35,7 +35,8 @@ export default{
     text-align: center;
     background-color: rgb(0, 118, 236);
     border-radius: 5px;
-
+    overflow: hidden;
+    
     span{
         color: black;
     }

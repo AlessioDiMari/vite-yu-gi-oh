@@ -1,6 +1,7 @@
 <script>
 import {store} from '../store.js';
 import CardItem from './CardItem.vue';
+import CardsFilter from './CardsFilter.vue';
 
 export default{
     name: 'AppCardsList',
@@ -12,6 +13,7 @@ export default{
     },
     components:{
         CardItem,
+        CardsFilter,
     }
 
 }
@@ -24,6 +26,8 @@ export default{
 <div class="container">
     <h2>Lista Carte</h2>
 
+    <CardsFilter></CardsFilter>
+    
     <ul>
         <CardItem v-for="actualCard in store.cards" :card="actualCard"></CardItem>
     </ul>
@@ -41,7 +45,7 @@ export default{
 
     h2{
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
     }
 
     ul{

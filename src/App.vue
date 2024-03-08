@@ -22,6 +22,13 @@ export default{
       .then(res =>{
         console.log(res.data.data)
         this.store.cards = res.data.data;
+      });
+
+    // call API per la popolazione del select
+    axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+      .then(res =>{
+        console.log('archetipi', res.data)
+        this.store.archetypes = res.data
       })
 
   }
