@@ -5,4 +5,6 @@ export const store = reactive({
     cards : [],
     archetypes : [],
 
+    archetypeValue : '',
+
 });

@@ -9,6 +9,11 @@ export default{
             store,
         }
     },
+
+    methods(){
+
+    },
+
 }
 
 </script>
@@ -17,7 +22,7 @@ export default{
 
 <template>
 
-<select name="" id="card-filter">
+<select name="card-filter" id="card-filter" @change="$emit('filter')" v-model="store.archetypeValue">
 
     <option v-for="actualArchetype in store.archetypes" :value="actualArchetype.archetype_name">{{ actualArchetype.archetype_name }}</option>
     

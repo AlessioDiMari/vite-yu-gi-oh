@@ -2,6 +2,7 @@
 import {store} from '../store.js';
 import CardItem from './CardItem.vue';
 import CardsFilter from './CardsFilter.vue';
+import axios from 'axios';
 
 export default{
     name: 'AppCardsList',
@@ -14,6 +15,16 @@ export default{
     components:{
         CardItem,
         CardsFilter,
+    },
+
+    methods: {
+        filterCards(){
+            // chiamata API a seconda dell'archetipo
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=30&offset=0&archetype=' + this.store.archetypeValue )
+            .then(res =>{
+                this.store.cards = res.data.data;
+            });
+        }
     }
 
 }
@@ -26,7 +37,7 @@ export default{
 <div class="container">
     <h2>Lista Carte</h2>
 
-    <CardsFilter></CardsFilter>
+    <CardsFilter @filter="filterCards"></CardsFilter>
     
     <ul>
         <CardItem v-for="actualCard in store.cards" :card="actualCard"></CardItem>
