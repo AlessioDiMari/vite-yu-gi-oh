@@ -18,8 +18,8 @@ export default{
 <template>
 
 <select name="" id="card-filter">
-    
-    <option value="archetype">ciao</option>
+
+    <option v-for="actualArchetype in store.archetypes" :value="actualArchetype.archetype_name">{{ actualArchetype.archetype_name }}</option>
     
 </select>
 
